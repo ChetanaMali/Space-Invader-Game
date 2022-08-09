@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 451641542000855725}
   - component: {fileID: 451641542000855724}
   - component: {fileID: 451641542000855731}
-  - component: {fileID: 2234098937524254715}
   - component: {fileID: -5766180466156263531}
+  - component: {fileID: 3290469039026236258}
   m_Layer: 0
   m_Name: Bullets
   m_TagString: Bullet
@@ -101,19 +101,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.59
---- !u!114 &2234098937524254715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 451641542000855730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c4259ae5aaab76429bccc0a9416356b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootingSpeed: 5
 --- !u!50 &-5766180466156263531
 Rigidbody2D:
   serializedVersion: 4
@@ -135,3 +122,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3290469039026236258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451641542000855730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 808105ce6effea0439330d1452c41cfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingSpeed: 5

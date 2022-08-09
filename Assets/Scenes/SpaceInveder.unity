@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 75448152}
   - component: {fileID: 75448153}
   m_Layer: 0
-  m_Name: HeroRocket
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,11 +230,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 75448148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 808105ce6effea0439330d1452c41cfc, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c4259ae5aaab76429bccc0a9416356b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 451641542000855730, guid: 7d4b38ea2cf5285438d49c5fe0d3972e, type: 3}
-  sound: {fileID: 0}
 --- !u!61 &75448153
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -5,26 +5,23 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] GameObject bullet;     // We add the bullet prefab 
-    [SerializeField] GameObject sound;
-   
-    // Update is called once per frame
-    void Update()
+    [SerializeField] float shootingSpeed = 5f;     //Bullet shoot speed
+    private void Update()
     {
-        InstantiateBullet();        //Initialize bullet Prefab when we shoot the enemy Rocket
+        transform.Translate(Vector2.up * Time.deltaTime * shootingSpeed);   //transform for go bullet upside after instentiate
     }
 
-    public void InstantiateBullet()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (collision.gameObject.tag == "Enemy")
         {
-            Instantiate(bullet, transform.position, Quaternion.identity);// Instantiate bullet where the position of Rocket
-            GameManager.ShootSound();   //Play shoot music when we shoot
-            
+            //Debug.Log(collision.gameObject.name);
+            Destroy(collision.gameObject);  // Destroy Enemy
+            GameManager.EnemydeadSound();   // Play sound when enemy will destroy
+            GameManager.Scoring();          // Count Score 
+            Destroy(gameObject);            // Destroy Bullet
         }
-
     }
-  
-    
+
 
 }

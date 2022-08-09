@@ -4,27 +4,24 @@ using UnityEngine;
 
 public class ShootingMech : MonoBehaviour
 {
-    [SerializeField] float shootingSpeed = 5f;     //Bullet shoot speed
-    
-   
-    private void Update()
+    [SerializeField] GameObject bullet;     // We add the bullet prefab 
+
+    // Update is called once per frame
+    void Update()
     {
-        transform.Translate(Vector2.up * Time.deltaTime * shootingSpeed);
+        InstantiateBullet();        //Initialize bullet Prefab when we shoot the enemy Rocket
     }
-    
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    public void InstantiateBullet()
     {
-        if (collision.gameObject.tag == "Enemy" )
+        if (Input.GetButtonDown("Fire1"))
         {
-            Debug.Log(collision.gameObject.name);
-            Destroy(collision.gameObject);
-            GameManager.EnemydeadSound();
-            GameManager.Scoring();
+            Instantiate(bullet, transform.position, Quaternion.identity);// Instantiate bullet where the position of Rocket
+            GameManager.ShootSound();   //Play shoot music when we shoot
 
         }
-        
-        Destroy(gameObject);
-        
+
     }
-    
+
+
 }
