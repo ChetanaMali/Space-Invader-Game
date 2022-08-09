@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     }
     public void _Scoring()
     {
-        // Method for Score as enemy dead Score will increses
+        // Method for Score as enemy dead Score will increses 
         Debug.Log("Score is: " + score + ".");
         score+=5;
         scoringText.text = " Score: " + score.ToString();
