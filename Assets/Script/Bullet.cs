@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour 
 {
     [SerializeField] float shootingSpeed = 5f;     //Bullet shoot speed
     private void Update()
@@ -17,9 +17,19 @@ public class Bullet : MonoBehaviour
         {
             //Debug.Log(collision.gameObject.name);
             Destroy(collision.gameObject);  // Destroy Enemy
-            GameManager.EnemydeadSound();   // Play sound when enemy will destroy
-            GameManager.Scoring();          // Count Score 
+            GameManager.instance.EnemydeadSound();   // Play sound when enemy will destroy
+            GameManager.instance.Scoring();          // Count Score 
             Destroy(gameObject);            // Destroy Bullet
+           
+        }
+        IDebugStatement _idebugStatement = collision.GetComponent<IDebugStatement>();
+        if (_idebugStatement != null)
+        {
+            _idebugStatement.DebugStatement();
+        }
+        else
+        {
+            Debug.Log("_idebugstatement is null for " + gameObject.name);
         }
     }
 

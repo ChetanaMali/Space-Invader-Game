@@ -17,7 +17,7 @@ public class ShootingMech : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Instantiate(bullet, transform.position, Quaternion.identity);// Instantiate bullet where the position of Rocket
-            GameManager.ShootSound();   //Play shoot music when we shoot
+            GameManager.instance.ShootSound();   //Play shoot music when we shoot
 
         }
 
