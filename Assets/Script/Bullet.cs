@@ -22,15 +22,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);            // Destroy Bullet
            
         }
-        IDebugStatement _idebugStatement = collision.GetComponent<IDebugStatement>();
-        if (_idebugStatement != null)
-        {
-            _idebugStatement.DebugStatement();
-        }
-        else
-        {
-            Debug.Log("_idebugstatement is null for " + gameObject.name);
-        }
+        
     }
 
 }
